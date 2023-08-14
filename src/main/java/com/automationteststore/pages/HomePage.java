@@ -21,6 +21,8 @@ public class HomePage {
         driver.findElement(By.xpath(loginOrRegisterButton)).click();
 
     }
+    //any new comment
+
 
     public void openPage() {
         driver.get(homePageUrl);
