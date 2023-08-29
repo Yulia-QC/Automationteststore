@@ -1,6 +1,5 @@
 package com.automationstore.shoppingCartTests;
 
-import com.automationstore.login_tests.SearchKeywordsTests;
 import com.automationteststore.base.BrowserDriverFactory;
 import com.automationteststore.pages.ApparelAccessoriesShoesPage;
 import com.automationteststore.pages.MyAccountPage;

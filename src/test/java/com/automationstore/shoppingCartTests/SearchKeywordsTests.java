@@ -1,4 +1,4 @@
-package com.automationstore.login_tests;
+package com.automationstore.shoppingCartTests;
 
 import com.automationteststore.base.BrowserDriverFactory;
 import com.automationteststore.pages.HomePage;
