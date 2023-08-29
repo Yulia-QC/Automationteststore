@@ -13,7 +13,7 @@ public class ApparelAccessoriesShoesPage {
 
     public void openShoesProductPage(int id) {
 
-        String locator = String.format(addToShoesProductPage,id);
+        String locator = String.format(addToShoesProductPage, id);
 
         driver.findElement(By.xpath(locator)).click();
 

@@ -1,6 +1,7 @@
 package com.automationstore.shoppingCartTests;
 
-import com.automationteststore.base.DriverFactory;
+import com.automationstore.login_tests.SearchKeywordsTests;
+import com.automationteststore.base.BrowserDriverFactory;
 import com.automationteststore.pages.ApparelAccessoriesShoesPage;
 import com.automationteststore.pages.MyAccountPage;
 import com.automationteststore.pages.ShoesProductPage;
@@ -9,20 +10,18 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+
+
 public class AddShoppingCartTests {
     private WebDriver driver;
 
+
     @BeforeTest
     public void setUpDriver() {
-        driver = DriverFactory.getDriver();
+
+        driver = BrowserDriverFactory.getDriver();
     }
 
-    @AfterTest
-    public void cleanUp() {
-        if(driver != null) {
-            driver.manage().deleteAllCookies();
-        }
-    }
 
     @Test
     @Parameters({"productQuantity"})
@@ -44,10 +43,15 @@ public class AddShoppingCartTests {
         ShoppingCart shoppingCart = new ShoppingCart(driver);
         shoppingCart.verifyMaintext();
         int actualQuantity = shoppingCart.getProductQuantity();
-        Assert.assertEquals(productQuantity,actualQuantity,"Quantity doesn't match.");
+        Assert.assertEquals(productQuantity, actualQuantity, "Quantity doesn't match.");
 
 
+    }
 
-
+    @AfterTest
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }

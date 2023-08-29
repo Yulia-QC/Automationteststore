@@ -22,6 +22,7 @@ public class ShoppingCart {
         String actualText = driver.findElement(By.xpath(maintext)).getText();
         Assert.assertEquals(actualText, expectedText, "Text is not match");
     }
+
     public int getProductQuantity() {
         WebElement quantityInput = driver.findElement(By.xpath(quantity));
         return Integer.parseInt(quantityInput.getAttribute("value"));

@@ -21,12 +21,12 @@ public class HomePage {
         driver.findElement(By.xpath(loginOrRegisterButton)).click();
 
     }
-    //any new comment
 
 
     public void openPage() {
         driver.get(homePageUrl);
     }
+
     public void enterSearchValue(String product) {
         WebElement searchField = driver.findElement(By.xpath(searchKeywordsField));
         searchField.sendKeys(product);
@@ -34,6 +34,7 @@ public class HomePage {
 
 
     }
+
     public void verifyExistingProduct(String product) {
 
     }

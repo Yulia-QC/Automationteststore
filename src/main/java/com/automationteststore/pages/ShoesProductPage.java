@@ -13,8 +13,6 @@ public class ShoesProductPage {
     private String quantityField = "//input[contains(@name,'quantity')]";
 
 
-
-
     public ShoesProductPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -22,15 +20,18 @@ public class ShoesProductPage {
     public void addToCard() {
         driver.findElement(By.xpath(addToCardButton)).click();
     }
+
     public void clickSelectSizeRadioButton() {
         driver.findElement(By.xpath(selectSizeRadioButton)).click();
     }
+
     public void selectValueFromColourDropdown(String value) {
         WebElement selectColourDropdown = driver.findElement(By.xpath(colourDropdown));
         Select select = new Select(selectColourDropdown);
         select.selectByValue(value);
 
     }
+
     public void selectQuantityValue(int quantity) {
         driver.findElement(By.xpath(quantityField)).click();
         driver.findElement(By.xpath(quantityField)).clear();
