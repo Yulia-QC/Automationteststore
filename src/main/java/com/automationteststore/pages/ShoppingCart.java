@@ -27,4 +27,16 @@ public class ShoppingCart {
         WebElement quantityInput = driver.findElement(By.xpath(quantity));
         return Integer.parseInt(quantityInput.getAttribute("value"));
     }
+
+
+    public static void main(String[] args) {
+        int x = 7;
+        int y = 3;
+        int z = 4;
+        System.out.println(x++ + ++y - --z + (z-- + x + y++) + x++ + ++y + z--);
+        System.out.println(x);
+        System.out.println(y);
+        System.out.println(z);
+    }
+
 }
