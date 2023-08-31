@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-public class ShoppingCart {
+public class ShoppingCartPage {
     private WebDriver driver;
     private String maintext = "//span[@class='maintext']";
     private String unitPrice;
@@ -13,7 +13,7 @@ public class ShoppingCart {
     private String quantity = "//input[contains(@name,'quantity')]";
 
 
-    public ShoppingCart(WebDriver driver) {
+    public ShoppingCartPage(WebDriver driver) {
         this.driver = driver;
     }
 
