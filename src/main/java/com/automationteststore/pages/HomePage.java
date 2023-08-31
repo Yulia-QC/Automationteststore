@@ -5,12 +5,15 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 
 public class HomePage {
     private WebDriver driver;
     private String homePageUrl = "https://automationteststore.com/";
     private String loginOrRegisterButton = "//a[text()='Login or register']";
     private String searchKeywordsField = "//div[@class='btn-group search-bar']//input[@id= 'filter_keyword']";
+
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -34,7 +37,4 @@ public class HomePage {
 
     }
 
-    public void verifyExistingProduct(String product) {
-
-    }
 }
