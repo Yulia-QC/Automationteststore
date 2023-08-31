@@ -1,6 +1,7 @@
 package com.automationstore.shoppingCartTests;
 
 import com.automationteststore.base.BrowserDriverFactory;
+import com.automationteststore.base.CSVDataProvider;
 import com.automationteststore.pages.HomePage;
 import com.automationteststore.pages.ProductMeetingSearchPage;
 import org.openqa.selenium.By;
@@ -8,8 +9,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -22,10 +26,17 @@ public class SearchKeywordsTests {
 
         driver = BrowserDriverFactory.getDriver();
     }
+    @DataProvider(name = "csvReader")
+    public Iterator<Object[]> provideTestData() {
+        String csvFilePath = "src/test/resources/DataProviders/search_products.csv";
+        return CSVDataProvider.provideData(csvFilePath);
+    }
+    @Test(dataProvider = "csvReader")
 
-    @Test
-    public void verifyPositiveSearchProductTest() {
-        String productName = "Armani";
+    public void verifyPositiveSearchProductTest(HashMap<String, String> testData) {
+
+        String productName = testData.get("productName");
+        System.out.println((productName));
 
         HomePage homePage = new HomePage(driver);
         homePage.openPage();
