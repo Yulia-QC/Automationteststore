@@ -4,7 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
 
 
 public class HomePage {
@@ -12,6 +13,7 @@ public class HomePage {
     private String homePageUrl = "https://automationteststore.com/";
     private String loginOrRegisterButton = "//a[text()='Login or register']";
     private String searchKeywordsField = "//div[@class='btn-group search-bar']//input[@id= 'filter_keyword']";
+
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -22,9 +24,11 @@ public class HomePage {
 
     }
 
+
     public void openPage() {
         driver.get(homePageUrl);
     }
+
     public void enterSearchValue(String product) {
         WebElement searchField = driver.findElement(By.xpath(searchKeywordsField));
         searchField.sendKeys(product);
@@ -32,7 +36,5 @@ public class HomePage {
 
 
     }
-    public void verifyExistingProduct(String product) {
 
-    }
 }

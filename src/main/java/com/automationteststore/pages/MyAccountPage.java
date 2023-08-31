@@ -18,6 +18,7 @@ public class MyAccountPage {
     public MyAccountPage(WebDriver driver) {
         this.driver = driver;
     }
+
     public void openMyAccountPage() {
         driver.get(myAccountPageUrl);
     }
@@ -34,6 +35,7 @@ public class MyAccountPage {
         action.moveToElement(elem).perform();
         driver.findElement(By.xpath(apparelAccessoriesShoes)).click();
     }
+
     public void searchForItem() {
         driver.findElement(By.xpath(searchKeywords)).click();
 

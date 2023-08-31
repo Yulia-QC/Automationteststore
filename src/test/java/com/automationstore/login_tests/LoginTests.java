@@ -1,23 +1,28 @@
 package com.automationstore.login_tests;
 
-import com.automationteststore.base.DriverFactory;
+import com.automationteststore.base.BrowserDriverFactory;
 import com.automationteststore.pages.HomePage;
 import com.automationteststore.pages.LoginPage;
 import com.automationteststore.pages.MyAccountPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+
 
 public class LoginTests {
     private WebDriver driver;
 
-    @BeforeTest
+
+    @ BeforeTest
     public void setUpDriver() {
-        driver = DriverFactory.getDriver();
+
+        driver = BrowserDriverFactory.getDriver();
     }
 
-    @Test
+    @ Test
     public void loginTestWithValidCredentials() {
 
         HomePage homePage = new HomePage(driver);
@@ -25,8 +30,8 @@ public class LoginTests {
         homePage.clickLoginOrRegisterButton();
 
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.enterUserName();
-        loginPage.enterPassword();
+        loginPage.enterUserName("username");
+        loginPage.enterPassword("password");
         loginPage.clickLoginButton();
 
         String expectedUrl = "https://automationteststore.com/index.php?rt=account/account";
@@ -36,8 +41,15 @@ public class LoginTests {
         MyAccountPage myAccountPage = new MyAccountPage(driver);
         myAccountPage.verifyMainText();
 
-//        driver.quit();
+
+    }
 
 
+
+    @AfterTest
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
