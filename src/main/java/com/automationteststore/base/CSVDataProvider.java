@@ -13,11 +13,11 @@ import java.util.List;
 public class CSVDataProvider {
 
     @DataProvider(name = "csvReader")
-    public Iterator<Object[]> provider() {
+    public static Iterator<Object[]> provideData(String filePath) {
         List<Object[]> testCases = new ArrayList<>();
 
         try {
-            CSVReader reader = new CSVReader(new FileReader("src/test/resources/DataProviders/invalid_credentials.csv"));
+            CSVReader reader = new CSVReader(new FileReader(filePath));
             String[] columnNames = reader.readNext();
             if (columnNames != null) {
                 String[] testValues;
