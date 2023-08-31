@@ -7,8 +7,10 @@ import com.automationteststore.pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import java.util.HashMap;
+import java.util.Iterator;
 
 
 public class LoginWithInvalidCredentialsTest {
@@ -20,9 +22,14 @@ public class LoginWithInvalidCredentialsTest {
 
         driver = BrowserDriverFactory.getDriver();
     }
+    @DataProvider(name = "csvReader")
+    public Iterator<Object[]> provideTestData() {
+        String csvFilePath = "src/test/resources/DataProviders/invalid_credentials.csv";
+        return CSVDataProvider.provideData(csvFilePath);
+    }
 
 
-    @Test(dataProvider = "csvReader", dataProviderClass = CSVDataProvider.class)
+    @Test(dataProvider = "csvReader")
     public void negativeLoginTest(HashMap<String, String> testData) {
         String username = testData.get("username");
         String password = testData.get("password");
