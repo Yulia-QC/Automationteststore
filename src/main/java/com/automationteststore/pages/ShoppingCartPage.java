@@ -27,40 +27,4 @@ public class ShoppingCartPage {
         WebElement quantityInput = driver.findElement(By.xpath(quantity));
         return Integer.parseInt(quantityInput.getAttribute("value"));
     }
-<<<<<<< HEAD:src/main/java/com/automationteststore/pages/ShoppingCartPage.java
 }
-=======
-
-
-    public static void main(String[] args) {
-        int x = 7;
-        int y = 3;
-        int z = 4;
-        System.out.println(x++ + ++y - --z + (z-- + x + y++) + x++ + ++y + z--);
-        System.out.println(x);
-        System.out.println(y);
-        System.out.println(z);
-
-        z+=10;
-        y-=5;
-        System.out.println(z);
-        System.out.println(y);
-
-        int e =5;
-        int r = 5;
-        System.out.println(e == r);
-        System.out.println(e != r);
-        System.out.println(7 != 8);
-
-        int t = 7;
-        int o = 9;
-        System.out.println(t > o);
-        System.out.println(t >= o);
-        System.out.println(t < o);
-        System.out.println(t <= o);
-        System.out.println(9 <= 9);
-
-    }
-
-}
->>>>>>> f678dd0 (commit files):src/main/java/com/automationteststore/pages/ShoppingCart.java
