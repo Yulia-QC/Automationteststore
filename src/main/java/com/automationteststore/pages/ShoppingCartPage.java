@@ -27,5 +27,4 @@ public class ShoppingCartPage {
         WebElement quantityInput = driver.findElement(By.xpath(quantity));
         return Integer.parseInt(quantityInput.getAttribute("value"));
     }
-
 }
