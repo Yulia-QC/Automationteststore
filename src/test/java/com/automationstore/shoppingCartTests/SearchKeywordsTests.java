@@ -46,10 +46,7 @@ public class SearchKeywordsTests {
         productMeetingSearchPage.verifyExistingProduct(productName);
 
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> 4fcfd96d644711ee337b6ee0e9737c834b076fed
     @AfterTest
     public void tearDown() {
         if (driver != null) {
