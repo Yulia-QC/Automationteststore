@@ -4,7 +4,7 @@ import com.automationteststore.base.BrowserDriverFactory;
 import com.automationteststore.pages.ApparelAccessoriesShoesPage;
 import com.automationteststore.pages.MyAccountPage;
 import com.automationteststore.pages.ShoesProductPage;
-import com.automationteststore.pages.ShoppingCart;
+import com.automationteststore.pages.ShoppingCartPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -39,7 +39,7 @@ public class AddShoppingCartTests {
         productPage.selectQuantityValue(1);
         productPage.addToCard();
 
-        ShoppingCart shoppingCart = new ShoppingCart(driver);
+        ShoppingCartPage shoppingCart = new ShoppingCartPage(driver);
         shoppingCart.verifyMaintext();
         int actualQuantity = shoppingCart.getProductQuantity();
         Assert.assertEquals(productQuantity, actualQuantity, "Quantity doesn't match.");
