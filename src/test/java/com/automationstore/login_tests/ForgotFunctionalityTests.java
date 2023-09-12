@@ -12,6 +12,7 @@ import org.testng.annotations.BeforeMethod;
 
 public class ForgotFunctionalityTests {
     private WebDriver driver;
+//    private String title = driver.getTitle();
 
 
     @BeforeTest
@@ -56,7 +57,7 @@ public class ForgotFunctionalityTests {
         String actualUrl = driver.getCurrentUrl();
         Assert.assertEquals(actualUrl, expectedUrl, "Actual page url is not the same as expected");
 
-        ForgottenPasswordPage forgottenpasswordPage = new ForgottenPasswordPage();
+        ForgottenPasswordPage forgottenpasswordPage = new ForgottenPasswordPage(driver);
         String expectedText = "FORGOT YOUR PASSWORD?";
         String actualText = driver.findElement(By.xpath(forgottenpasswordPage.getMaintext())).getText();
         Assert.assertEquals(actualText, expectedText, "Text is not match");
@@ -70,7 +71,7 @@ public class ForgotFunctionalityTests {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.clickForgotPasswordLink();
 
-        ForgottenPasswordPage forgottenPasswordPage = new ForgottenPasswordPage();
+        ForgottenPasswordPage forgottenPasswordPage = new ForgottenPasswordPage(driver);
         forgottenPasswordPage.enterlastName("username");
         forgottenPasswordPage.enterEmail("any@valid.com");
         forgottenPasswordPage.clickContinueButton();
