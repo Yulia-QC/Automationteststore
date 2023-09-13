@@ -5,10 +5,8 @@ import com.automationteststore.base.CSVDataProvider;
 import com.automationteststore.pages.HomePage;
 import com.automationteststore.pages.LoginPage;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -17,7 +15,7 @@ public class LoginWithInvalidCredentialsTest {
     private WebDriver driver;
 
 
-    @BeforeTest
+    @BeforeClass
     public void setUpDriver() {
 
         driver = BrowserDriverFactory.getDriver();
@@ -47,7 +45,7 @@ public class LoginWithInvalidCredentialsTest {
     }
 
 
-    @AfterTest
+    @AfterClass
     public void tearDown() {
         if (driver != null) {
             driver.quit();

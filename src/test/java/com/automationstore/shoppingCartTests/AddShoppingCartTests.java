@@ -15,7 +15,7 @@ public class AddShoppingCartTests {
     private WebDriver driver;
 
 
-    @BeforeTest
+    @BeforeClass
     public void setUpDriver() {
 
         driver = BrowserDriverFactory.getDriver();
@@ -47,7 +47,7 @@ public class AddShoppingCartTests {
 
     }
 
-    @AfterTest
+    @AfterClass
     public void tearDown() {
         if (driver != null) {
             driver.quit();
