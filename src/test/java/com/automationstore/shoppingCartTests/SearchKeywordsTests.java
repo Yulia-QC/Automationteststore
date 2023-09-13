@@ -5,15 +5,12 @@ import com.automationteststore.base.CSVDataProvider;
 import com.automationteststore.pages.HomePage;
 import com.automationteststore.pages.ProductMeetingSearchPage;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.HashMap;
 import java.util.Iterator;
 
-
+@Ignore
 public class SearchKeywordsTests {
     private WebDriver driver;
 

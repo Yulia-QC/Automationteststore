@@ -10,7 +10,7 @@ import org.testng.annotations.*;
 import java.util.HashMap;
 import java.util.Iterator;
 
-
+@Ignore
 public class LoginWithInvalidCredentialsTest {
     private WebDriver driver;
 

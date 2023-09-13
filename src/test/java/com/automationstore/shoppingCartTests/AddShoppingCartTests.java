@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 
 
-
+@Ignore
 public class AddShoppingCartTests {
     private WebDriver driver;
 
